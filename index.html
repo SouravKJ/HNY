@@ -31,14 +31,14 @@
 
 <!-- ACHIEVEMENTS -->
 <section class="achievement-photos">
-  <h2>🌟 Wins & Memories – 2025</h2>
+  <h2>🌟 ACHIEVEMENTS - 2025</h2>
   <p class="congrats-text">Cheers to everything you achieved 🥂</p>
 
   <div class="photo-grid">
-    <!-- <div class="photo-card">
-      <img src="img1.jpg" alt="Memory 1">
+    <div class="photo-card">
+      <img src="offerLetter.jpeg" alt="Memory 1">
       <p>Moments that made you stronger ✨</p>
-    </div> -->
+    </div>
 
     <div class="photo-card">
       <img src="topPerformer.jpeg" alt="Memory 2">
@@ -53,28 +53,54 @@
 
 <!-- SURPRISE -->
 <section class="surprise">
-  <button onclick="showWish()">New Year Surprise 🎁</button>
+  <button onclick="showWish(this)">New Year Surprise 🎁</button>
   <h2 id="wish"></h2>
 </section>
 
+<div id="sparks-container"></div>
+
+
 <script>
-  function showWish() {
+  function showWish(button) {
     const wishText =
       "🎆 Happy New Year, Sweta! 🎆\n\n" +
-      "May 2026 bring you confidence, peace, success, and countless reasons to smile.\n" +
-      "Keep chasing your dreams — the best is yet to come 🤍✨";
+      "May 2026 bring you peace, success, and beautiful moments 🤍✨";
 
-    const wishElement = document.getElementById("wish");
-    wishElement.innerText = wishText;
+    const wish = document.getElementById("wish");
+    wish.innerText = wishText;
+    wish.style.opacity = "1";
 
-    // Soft fade-in effect
-    wishElement.style.opacity = "0";
-    setTimeout(() => {
-      wishElement.style.opacity = "1";
-    }, 100);
+    shootSparks(button);
+  }
+
+  function shootSparks(btn) {
+    const rect = btn.getBoundingClientRect();
+    const originX = rect.left + rect.width / 2;
+    const originY = rect.top + rect.height / 2;
+
+    const container = document.getElementById("sparks-container");
+
+    for (let i = 0; i < 35; i++) {
+      const spark = document.createElement("div");
+      spark.className = "spark";
+
+      const angle = Math.random() * 2 * Math.PI;
+      const distance = Math.random() * 180 + 60;
+
+      const dx = Math.cos(angle) * distance + "px";
+      const dy = Math.sin(angle) * distance + "px";
+
+      spark.style.left = originX + "px";
+      spark.style.top = originY + "px";
+      spark.style.setProperty("--dx", dx);
+      spark.style.setProperty("--dy", dy);
+
+      container.appendChild(spark);
+
+      setTimeout(() => spark.remove(), 900);
+    }
   }
 </script>
 
 </body>
 </html>
-
