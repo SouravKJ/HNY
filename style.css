@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  text-align: center;
+  color: #333;
+}
+
+/* HERO */
+.hero {
+  padding: 70px 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  color: #b00050;
+}
+
+/* MESSAGE */
+.message {
+  padding: 40px;
+  font-size: 1.2em;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 180px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* ACHIEVEMENTS */
+.achievement-photos {
+  padding: 60px 20px;
+}
+
+.achievement-photos h2 {
+  font-size: 2.2em;
+  color: #7a003c;
+}
+
+.congrats-text {
+  font-size: 1.2em;
+  margin-bottom: 35px;
+}
+
+.photo-grid {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.photo-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  width: 280px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.photo-card:hover {
+  transform: translateY(-8px);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.photo-card p {
+  padding: 15px;
+  font-style: italic;
+}
+
+.final-line {
+  margin-top: 35px;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+/* SURPRISE */
+.surprise {
+  padding: 60px 20px;
+}
+
+button {
+  padding: 14px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 448px) {
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+
+  /* MESSAGE */
+  .message {
+    padding: 20px 15px;
+  }
+
+  .message p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  /* CARDS */
+  .cards {
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .card {
+    font-size: 0.95rem;
+    padding: 14px;
+  }
+
+  /* ACHIEVEMENTS */
+  .achievement-photos {
+    padding: 25px 12px;
+  }
+
+  .achievement-photos h2 {
+    font-size: 1.25rem;
+  }
+
+  .congrats-text {
+    font-size: 0.9rem;
+  }
+
+  /* PHOTOS */
+  .photo-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .photo-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .photo-card p {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  /* SURPRISE */
+  .surprise {
+    padding: 25px 15px;
+  }
+
+  .surprise button {
+    width: 100%;
+    padding: 11px;
+    font-size: 0.95rem;
+  }
+
+  #wish {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    white-space: pre-line;
+  }
+}

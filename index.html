@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy New Year 2026</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Happy New Year, Sweta 🎉</h1>
+  <p>A new year, new dreams, and endless possibilities.</p>
+</section>
+
+<!-- MESSAGE -->
+<section class="message">
+  <p>
+    As the year turns a new page,<br>
+    I just want you to know…<br><br>
+    You made 2025 special, and 2026 is yours to shine ✨🤍
+  </p>
+</section>
+
+<!-- APPRECIATION -->
+<section class="cards">
+  <div class="card">Your Positivity 🌸</div>
+  <div class="card">Your Dedication 💫</div>
+  <div class="card">Your Growth 🌱</div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="achievement-photos">
+  <h2>🌟 Wins & Memories – 2025</h2>
+  <p class="congrats-text">Cheers to everything you achieved 🥂</p>
+
+  <div class="photo-grid">
+    <div class="photo-card">
+      <img src="img1.jpg" alt="Memory 1">
+      <p>Moments that made you stronger ✨</p>
+    </div>
+
+    <div class="photo-card">
+      <img src="topPerformer.jpeg" alt="Memory 2">
+      <p>Success earned with patience 🏆</p>
+    </div>
+  </div>
+
+  <p class="final-line">
+    Carry these wins into the new year 🤍
+  </p>
+</section>
+
+<!-- SURPRISE -->
+<section class="surprise">
+  <button onclick="showWish()">New Year Surprise 🎁</button>
+  <h2 id="wish"></h2>
+</section>
+
+<script>
+  function showWish() {
+    const wishText =
+      "🎆 Happy New Year, Sweta! 🎆\n\n" +
+      "May 2026 bring you confidence, peace, success, and countless reasons to smile.\n" +
+      "Keep chasing your dreams — the best is yet to come 🤍✨";
+
+    const wishElement = document.getElementById("wish");
+    wishElement.innerText = wishText;
+
+    // Soft fade-in effect
+    wishElement.style.opacity = "0";
+    setTimeout(() => {
+      wishElement.style.opacity = "1";
+    }, 100);
+  }
+</script>
+
+</body>
+</html>
