@@ -57,47 +57,68 @@
   <h2 id="wish"></h2>
 </section>
 
+
 <div id="sparks-container"></div>
+<div id="confetti-container"></div>
 
 
 <script>
   function showWish(button) {
     const wishText =
       "🎆 Happy New Year, Sweta! 🎆\n\n" +
-      "May 2026 bring you peace, success, and beautiful moments 🤍✨";
+      "May this year shower you with success, peace, and happiness 🤍✨";
 
     const wish = document.getElementById("wish");
     wish.innerText = wishText;
     wish.style.opacity = "1";
 
     shootSparks(button);
+    startConfetti();
   }
 
+  /* 🔥 SPARK SHOOT FROM BUTTON */
   function shootSparks(btn) {
     const rect = btn.getBoundingClientRect();
-    const originX = rect.left + rect.width / 2;
-    const originY = rect.top + rect.height / 2;
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
 
     const container = document.getElementById("sparks-container");
 
-    for (let i = 0; i < 35; i++) {
+    for (let i = 0; i < 40; i++) {
       const spark = document.createElement("div");
       spark.className = "spark";
 
-      const angle = Math.random() * 2 * Math.PI;
-      const distance = Math.random() * 180 + 60;
+      const angle = Math.random() * Math.PI * 2;
+      const distance = Math.random() * 200 + 60;
 
-      const dx = Math.cos(angle) * distance + "px";
-      const dy = Math.sin(angle) * distance + "px";
-
-      spark.style.left = originX + "px";
-      spark.style.top = originY + "px";
-      spark.style.setProperty("--dx", dx);
-      spark.style.setProperty("--dy", dy);
+      spark.style.left = x + "px";
+      spark.style.top = y + "px";
+      spark.style.setProperty("--dx", Math.cos(angle) * distance + "px");
+      spark.style.setProperty("--dy", Math.sin(angle) * distance + "px");
 
       container.appendChild(spark);
-
       setTimeout(() => spark.remove(), 900);
+    }
+  }
+
+  /* 🎊 FULL PAGE CONFETTI */
+  function startConfetti() {
+    const container = document.getElementById("confetti-container");
+    const colors = ["#ff4d4d", "#ffd633", "#4dff4d", "#4dd2ff", "#d966ff"];
+
+    for (let i = 0; i < 120; i++) {
+      const confetti = document.createElement("div");
+      confetti.className = "confetti";
+
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.backgroundColor =
+        colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.animationDelay = Math.random() * 0.6 + "s";
+
+
+      container.appendChild(confetti);
+
+      setTimeout(() => confetti.remove(), 5000);
     }
   }
 </script>
