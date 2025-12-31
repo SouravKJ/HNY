@@ -15,6 +15,9 @@ body {
   font-size: 3em;
   color: #b00050;
 }
+.hero P{
+    font-size: 1.2rem;;
+}
 
 /* MESSAGE */
 .message {
@@ -65,7 +68,7 @@ body {
   background: white;
   border-radius: 18px;
   overflow: hidden;
-  width: 280px;
+  width: 300px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
 }
@@ -197,3 +200,33 @@ button {
     white-space: pre-line;
   }
 }
+/* SPARKS LAYER */
+#sparks-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* SPARK DOT */
+.spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fff, gold, orange);
+  border-radius: 50%;
+  animation: shoot 900ms ease-out forwards;
+}
+
+/* SHOOT ANIMATION */
+@keyframes shoot {
+  from {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--dx), var(--dy)) scale(0);
+    opacity: 0;
+  }
+}
+
